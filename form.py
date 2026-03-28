@@ -72,7 +72,9 @@ DIABETES_SAMPLES = {
     },
 
     "3️⃣ Sample Data": {
-        
+        "Pregnancies": 6, "Glucose": 178, "BloodPressure": 90,
+        "SkinThickness": 35, "Insulin": 220, "BMI": 34.6,
+        "DPF": 1.45, "Age": 62
     }
 }
 
