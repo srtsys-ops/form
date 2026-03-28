@@ -47,7 +47,7 @@ with st.form("diabetes_form"):
     # --- Row 1 ---
     col1, col2, col3 = st.columns(3)
     with col1:
-        Pregnancies = st.number_input(
+        Pregnancies = input(
             "Number of Pregnancies", 0, 20, key="Pregnancies"
         )
     with col2:
