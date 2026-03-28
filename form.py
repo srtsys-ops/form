@@ -37,6 +37,8 @@ defaults = {
     "DPF": 0.0,  "Age": 1
 }
 
+#=========== Clear & Title ============
+
 def clear_diabetes_form(): 
     for key, value in defaults.items():
         st.session_state[key] = value    
@@ -53,6 +55,35 @@ with col_btn1:
 with col_btn2:      
     st.button("🧹 Clear", type="secondary", on_click=clear_diabetes_form)
 
+#=================== Sample Data ==============
+DIABETES_SAMPLES = {
+    "Select Sample": None,
+
+    "1️⃣ Sample Data": {
+        "Pregnancies": 3, "Glucose": 126, "BloodPressure": 88,
+        "SkinThickness": 41, "Insulin": 235, "BMI": 39.3,
+        "DPF": 0.704, "Age": 27
+    },
+
+    "2️⃣ Sample Data": {
+        "Pregnancies": 2, "Glucose": 135, "BloodPressure": 82,
+        "SkinThickness": 28, "Insulin": 140, "BMI": 28.9,
+        "DPF": 0.78, "Age": 45
+    },
+
+    "3️⃣ Sample Data": {
+        "Pregnancies": 6, "Glucose": 178, "BloodPressure": 90,
+        "SkinThickness": 35, "Insulin": 220, "BMI": 34.6,
+        "DPF": 1.45, "Age": 62
+    }
+}
+
+
+st.selectbox(
+    "🧪 Load Sample Patient",
+    list(DIABETES_SAMPLES.keys()),
+    key="diabetes_sample"
+)
 
 
 # =============== values getting from User interface(form) ==============
