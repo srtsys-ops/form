@@ -68,7 +68,7 @@ with st.form("diabetes_form"):
     # --- Row 3 ---
     col1, col2 = st.columns(2)
     with col1:
-        DPF = st.number_input(
+            DiabetesPedigreeFunction = st.number_input(
             "Diabetes Pedigree Function", 0.0, 3.0, format="%.3f", key="DPF"
         )
     with col2:
