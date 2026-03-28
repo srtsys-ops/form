@@ -20,27 +20,18 @@ diabetes_model = pickle.load(open("diabetes_model.sav", "rb"))
 # DiabetesPedigreeFunction = 0.704
 # Age = 27
 
-Pregnancies = 6
-Glucose = 178
-BloodPressure = 98
-SkinThickness = 35
-Insulin = 220
-BMI = 34.6
-DiabetesPedigreeFunction = 1.45
-Age = 62
+# Pregnancies = 6
+# Glucose = 178
+# BloodPressure = 98
+# SkinThickness = 35
+# Insulin = 220
+# BMI = 34.6
+# DiabetesPedigreeFunction = 1.45
+# Age = 62
 
 
 
-input_data = [[
-    Pregnancies,
-    Glucose,
-    BloodPressure,
-    SkinThickness,
-    Insulin,
-    BMI,
-    DiabetesPedigreeFunction,
-    Age
-]]
+
 
 with st.form("diabetes_form"):
 
@@ -92,6 +83,18 @@ with st.form("diabetes_form"):
     with col1:
         predict_btn = st.form_submit_button("🔍 Diabetes Test Result", type="primary") 
 
+
+
+input_data = [[
+    Pregnancies,
+    Glucose,
+    BloodPressure,
+    SkinThickness,
+    Insulin,
+    BMI,
+    DiabetesPedigreeFunction,
+    Age
+]]
 
 diab_prediction = diabetes_model.predict(input_data)
 
