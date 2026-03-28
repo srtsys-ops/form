@@ -31,6 +31,28 @@ diabetes_model = pickle.load(open("diabetes_model.sav", "rb"))
 # DiabetesPedigreeFunction = 1.45
 # Age = 62
 
+defaults = {
+    "Pregnancies": 0, "Glucose": 0, "BloodPressure": 0,
+    "SkinThickness": 0, "Insulin": 0,  "BMI": 0.0,
+    "DPF": 0.0,  "Age": 1
+}
+
+def clear_diabetes_form(): 
+    for key, value in defaults.items():
+        st.session_state[key] = value    
+        
+
+col_title, col_btn1, col_btn2 = st.columns([4, 1, 1])
+
+with col_title:
+    st.header("🩸 Diabetes Prediction", divider="blue")
+
+with col_btn1:
+    st.markdown("<br>", unsafe_allow_html=True)
+        
+with col_btn2:      
+    st.button("🧹 Clear", type="secondary", on_click=clear_diabetes_form)
+
 
 
 # =============== values getting from User interface(form) ==============
