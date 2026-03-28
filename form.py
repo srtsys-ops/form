@@ -78,12 +78,20 @@ DIABETES_SAMPLES = {
     }
 }
 
-
+#Display select box
 st.selectbox(
     "🧪 Load Sample Patient",
     list(DIABETES_SAMPLES.keys()),
     key="diabetes_sample"
 )
+
+
+# Load sample data when selected
+if st.diabetes_sample != "Select Sample":
+    sample = DIABETES_SAMPLES.get(st.diabetes_sample)    
+    for key, value in sample.items():
+        st.session_state[key] = value
+   
 
 
 # =============== values getting from User interface(form) ==============
