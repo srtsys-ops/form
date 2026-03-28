@@ -120,10 +120,12 @@ input_data = [[
     Age
 ]]
 
-diab_prediction = diabetes_model.predict(input_data)
+if predict_btn:
 
-# Display prediction result
-if diab_prediction[0] == 1:
-    st.error("🔴 The person is Diabetic")
-else:
-    st.success("🟢 The person is not Diabetic")
+    diab_prediction = diabetes_model.predict(input_data)
+
+    # Display prediction result
+    if diab_prediction[0] == 1:
+        st.error("🔴 The person is Diabetic")
+    else:
+        st.success("🟢 The person is not Diabetic")
