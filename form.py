@@ -36,41 +36,54 @@ diabetes_model = pickle.load(open("diabetes_model.sav", "rb"))
 # =============== values getting from User interface(form) ==============
 
 with st.form("diabetes_form"):
-   
-    Pregnancies = st.number_input(
-        "Number of Pregnancies", 0, 20, key="Pregnancies"
-    )
 
-    Glucose = st.number_input(
-        "Glucose Level (mg/dL)", 0, 300, key="Glucose"
-    )
+    # --- Row 1 ---
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        Pregnancies = st.number_input(
+            "Number of Pregnancies", 0, 20, key="Pregnancies"
+        )
+    with col2:
+        Glucose = st.number_input(
+            "Glucose Level (mg/dL)", 0, 300, key="Glucose"
+        )
+    with col3:
+        BloodPressure = st.number_input(
+            "Blood Pressure (mm Hg)", 0, 200, key="BloodPressure"
+        )       
 
-    BloodPressure = st.number_input(
-        "Blood Pressure (mm Hg)", 0, 200, key="BloodPressure"
-    ) 
-   
-    SkinThickness = st.number_input(
-        "Skin Thickness (mm)", 0, 100, key="SkinThickness"
-    )
+    # --- Row 2 ---
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        SkinThickness = st.number_input(
+            "Skin Thickness (mm)", 0, 100, key="SkinThickness"
+        )
+    with col2:
+        Insulin = st.number_input(
+            "Insulin Level (µU/mL)", 0, 900, key="Insulin"
+        )
+    with col3:
+        BMI = st.number_input(
+            "BMI", 0.0, 70.0, format="%.2f", key="BMI"
+        )
 
-    Insulin = st.number_input(
-        "Insulin Level (µU/mL)", 0, 900, key="Insulin"
-    )
+    # --- Row 3 ---
+    col1, col2 = st.columns(2)
+    with col1:
+        DiabetesPedigreeFunction = st.number_input(
+            "Diabetes Pedigree Function", 0.0, 3.0, format="%.3f", key="DPF"
+        )
+    with col2:
+        Age = st.number_input(
+            "Age", 1, 120, key="Age"
+        )
 
-    BMI = st.number_input(
-        "BMI", 0.0, 70.0, format="%.2f", key="BMI"
-    )    
-    
-    DiabetesPedigreeFunction = st.number_input(
-        "Diabetes Pedigree Function", 0.0, 3.0, format="%.3f", key="DPF"
-    )
-
-    Age = st.number_input(
-        "Age", 1, 120, key="Age"
-    )
-
-   
-    predict_btn = st.form_submit_button("🔍 Diabetes Test Result", type="primary") 
+    # -------------------------------------------------
+    # 8️⃣ PREDICTION BUTTON
+    # -------------------------------------------------
+    col1, col2 = st.columns(2)
+    with col1:
+        predict_btn = st.form_submit_button("🔍 Diabetes Test Result", type="primary") 
 
 
 
