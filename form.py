@@ -87,8 +87,8 @@ st.selectbox(
 
 
 # Load sample data when selected
-if st.diabetes_sample != "Select Sample":
-    sample = DIABETES_SAMPLES.get(st.diabetes_sample)    
+if st.session_state.diabetes_sample != "Select Sample":
+    sample = DIABETES_SAMPLES.get(st.session_state.diabetes_sample)    
     for key, value in sample.items():
         st.session_state[key] = value
    
